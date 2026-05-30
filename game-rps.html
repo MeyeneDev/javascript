@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="js_tutorials.css">
+  <title>rock paper scissors game</title>
+</head>
+<body>
+  <div class="wrapper blk" 
+  oninput ="  fullscreen()">
+    <h1>Rock Paper Scissors</h1>
+    <div class="wrapper__btn">
+      <button class="btn"
+        onclick="
+         player_move(`rock`);
+         //game_moves(`rock`); 
+        "
+      ><img src="img/rock-emoji.png" alt=""></button>
+      
+      <button class="btn"
+        onclick="
+         player_move(`paper`);
+         //game_moves(`paper`); 
+        "
+      ><img src="img/paper-emoji.png" alt=""></button>
+
+      <button class="btn"
+        onclick="
+         player_move(`scissors`);
+         //game_moves(`scissors`); 
+        "
+      ><img src="img/scissors-emoji.png" alt=""></button>
+      
+    </div>
+    <div class="game_moves"></div>
+    <div class="result"></div>
+    <div class="score_board"></div>
+    <div>
+      <button class="reset_btn"
+      onclick="
+        auto_play();
+      "
+      >Reset Score
+      </button>
+      <button class="reset_btn"
+        onclick="
+          reset();
+        "
+      >Auto Play
+      </button>
+    </div>
+    
+  </div>
+
+  <script src="game-rps.js">
+  </script>
+  
+</body>
+</html>

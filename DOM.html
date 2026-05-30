@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DOM</title>
+    <style>
+
+      html, h2, h3 {
+        padding: 0;
+        margin: 0;
+        font-family: sans-serif;
+      }
+    button, .subs {
+      background-color: hsl(0, 40%, 65%);
+      border: none;
+      color:white;
+      padding: 12px 60px;
+      margin-block: 8px;
+      border-radius: 24px;
+      border-bottom: 2.5px solid hsl(0, 40%, 30%);
+      font-weight: 600;
+      font-size: 22px;
+      text-transform: capitalize;
+      text-shadow: 0 -1.5px 1px hsl(0, 40%, 30%);
+      cursor: pointer;
+      transition: background-color .4s;
+
+    }
+    button:hover, .subs:hover {
+      background-color: hsl(0, 60%, 65%);
+      border: none;
+    }
+    button:active,  .subs:active {
+      background-color: hsl(0, 60%, 50%);
+      border: none;
+    }
+    .subs-state {
+      background-color: hsl(0, 40%, 90%);
+      color: hsl(0, 40%, 65%);
+       text-shadow: 0 -1px 1px hsl(0, 40%, 30%);
+      border: none;
+    }
+    .subs-state:hover {
+      background-color: hsl(0, 40%, 90%);
+      color: hsl(0, 40%, 65%);
+       text-shadow: 0 -1px 1px hsl(0, 40%, 30%);
+      border: none;
+      cursor: default;
+    }
+    button:active,  .subs:active {
+       background-color: hsl(0, 40%, 90%);
+      color: hsl(0, 40%, 65%);
+       text-shadow: 0 -1px 1px hsl(0, 40%, 30%);
+      border: none;
+    }
+
+
+    input {padding-inline-start: 18px;
+      margin-block: 8px;
+      block-size: 38px;
+      border-radius: 24px;
+      font-size: 18px;
+    }
+    div {
+      inline-size: 400px;
+      gap: 8px;
+      display: flex;
+      flex-flow: column nowrap;
+      margin-block-start: 55px;
+      margin-inline: auto;
+      
+      /* align-content: bottom; */
+    }
+    .cost-display {
+
+      font-weight: 600;
+      font-size: 22px;
+      text-align: center;
+    }
+    .calc {
+      inline-size: 100%;
+    }
+  </style>
+</head>
+<body>
+  <div>
+    <h2>Gtube subscribe button</h2>
+    <button class="subs"  onclick="
+       subs();
+    ">
+     Subscribe
+    </button>
+  </div>
+    <div>
+    <h2>Play Game</h2>
+    <h3>Rock Paper Scissors</h3>
+    <a href="game-rps.html">
+      <button class="calc">Play Now!!!</button>
+    </a>
+  </div>
+  <div>
+    <h2>
+      Amazon Shipping Calculator.
+    </h2>
+    <span>
+      Order under $40 = +$10 Shipping.
+    </span>
+    <span>
+      Order over $40 = <b>FREE</b> Shipping
+    </span>
+    <input type="text" id="calculator" placeholder="Cost of order..."
+    onkeydown="
+     enter_keydown_input()
+      //event.key === `Enter` ? calculate() : 0
+    // if(event.key === `Enter`) {
+    //   event.key = calculate();
+    // }
+    "
+    >
+    <button class="calc"
+    onclick="
+     calculate();
+    ">Calculate</button>
+    <span class="cost-display"></span>
+  </div>
+
+  <script>
+    function enter_keydown_input() {
+      event.key === `Enter` ? calculate() : 0
+    }
+    function calculate() {
+      calcElem = document.querySelector(`.calc`);
+      inputElem = document.querySelector(`#calculator`);
+      cost = Number(inputElem.value);
+
+      if (cost < 40) {
+        cost = cost + 10 
+      }
+      cost_displayElem = document.querySelector(`.cost-display`);
+      cost_displayElem.innerHTML = `Total: $${cost}`;
+      //console.log(cost);
+      
+      
+    }
+
+    function subs() {
+      let subscribeElem = document.querySelector('.subs');
+      if (subscribeElem.innerText === `Subscribe`) {
+        subscribeElem.innerText = `Subscribed`;
+        subscribeElem.classList.add(`subs-state`)
+      } else {
+        subscribeElem.innerText = `Subscribe`;
+        subscribeElem.classList.remove(`subs-state`)
+      }
+    }
+    
+  </script>
+</body>
+</html>

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>objects</title>
+</head>
+<body>
+  <script>
+    function number() {
+        console.log(`check me out`);
+    }
+    // product = {
+    //   ratings: function number2() {
+    //     console.log(`check me out now`);
+    //   },
+    //   //ratings1: number(),
+
+    // };
+      //console.log(product['ratings()']);
+    //console.log(product.ratings());
+    //product.ratings();
+   const product = {
+      
+      ratings1: "hello",
+      ratings2: "hello",
+
+    };
+   //console.log(product.ratings1);
+product2 = product;
+product2.ratings1 = 'blue';
+product.ratings2 = 'black';
+//console.log(product.ratings1);
+// console.log(product2, product);
+// console.log(product2 === product);
+
+//product3 = product;
+//let {ratings1, rate} = product3;
+const {ratings1} = product;
+//console.log(ratings1, rate);
+const product3 = {
+  ratings1,
+  ratings2: "o",
+
+};
+console.log(product3['ratings1']);
+
+
+  </script>
+</body>
+</html>

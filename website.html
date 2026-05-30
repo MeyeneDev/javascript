@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>variableJS</title>
+  <style>
+    button {
+      background-color: hsl(0, 40%, 66%);
+      border: none;
+      color:white;
+      padding: 8px 24px;
+      margin-inline: 4px;
+      margin-block: 8px;
+      border-radius: 24px;
+      font-weight: 600;
+      font-size: 18px;
+      text-transform: capitalize;
+      text-shadow: 0 -1px 1px black;
+      cursor: pointer;
+
+    }
+    button:hover {
+      background-color: hsl(0, 60%, 65%);
+    }
+
+    div {
+      padding-inline-start: 76px;
+    }
+  </style>
+</head>
+<body>
+  <button
+    onclick="
+      cartQuantity++;
+      console.log(cartQuantity);
+      alert(`Item was Added to Cart`);
+    ">
+   <span>Add to cart</span>
+  </button>
+  <button
+    onclick="
+      cartQuantity = 0;
+      console.log(cartQuantity);
+      alert(`Cart was Reset`);
+    ">
+   <span>reset</span>
+  </button>
+  <button 
+     onclick="
+      alert(cartQuantity);
+     ">
+      total
+    </button>
+  <div>
+    <button 
+     onclick="
+        cartQuantity--
+        console.log(cartQuantity);
+        alert(`item was remove from cart`);
+      ">
+      &#60
+    </button>
+    <button 
+     onclick="
+        cartQuantity += 2
+        console.log(cartQuantity);;
+     ">
+      2
+    </button>
+    <button 
+     onclick="
+      cartQuantity++;
+      console.log(cartQuantity);
+     ">
+      &#62
+    </button> 
+  </div>
+  <script>
+    cartQuantity = 0;
+
+  </script>
+</body>
+</html>
