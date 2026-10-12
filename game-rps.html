@@ -7,52 +7,38 @@
   <title>rock paper scissors game</title>
 </head>
 <body>
-  <div class="wrapper blk" 
-  oninput ="  fullscreen()">
+  <div class="wrapper">
     <h1>Rock Paper Scissors</h1>
     <div class="wrapper__btn">
-      <button class="btn"
-        onclick="
-         player_move(`rock`);
-         //game_moves(`rock`); 
-        "
-      ><img src="img/rock-emoji.png" alt=""></button>
+      <button title="rock" class="btn">
+        <img src="img/rock-emoji.png" name="rpsImg" alt="rock">
+      </button>
       
-      <button class="btn"
-        onclick="
-         player_move(`paper`);
-         //game_moves(`paper`); 
-        "
-      ><img src="img/paper-emoji.png" alt=""></button>
+      <button title="paper" class="btn">
+        <img src="img/paper-emoji.png" name="rpsImg" alt="paper">
+      </button>
 
-      <button class="btn"
-        onclick="
-         player_move(`scissors`);
-         //game_moves(`scissors`); 
-        "
-      ><img src="img/scissors-emoji.png" alt=""></button>
+      <button title="scissors" class="btn">
+        <img src="img/scissors-emoji.png" name="rpsImg" alt="scissors">
+      </button>
       
     </div>
-    <div class="game_moves"></div>
-    <div class="result"></div>
-    <div class="score_board"></div>
-    <div>
-      <button class="reset_btn"
-      onclick="
-        auto_play();
-      "
-      >Reset Score
+    <div class="divbtn">
+      <button class="reset_btn reset">
+        Reset Score
       </button>
-      <button class="reset_btn"
-        onclick="
-          reset();
-        "
-      >Auto Play
+      <button class="reset_btn autoplay">
+        Auto Play
       </button>
     </div>
+    <div id="scoreBoard" class="score_board"></div>
+    <div id="gameMove" class="game_moves"></div>
+    <div class="result"></div>
     
   </div>
-
+  <div class="author">
+    <span class="small">powered by</span> <span class="bold">GG</span> engine
+  </div>
   <script src="game-rps.js">
   </script>
   

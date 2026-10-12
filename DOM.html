@@ -64,10 +64,10 @@
     }
     div {
       inline-size: 400px;
-      gap: 8px;
+      gap: 12px;
       display: flex;
       flex-flow: column nowrap;
-      margin-block-start: 55px;
+      margin-block-start: 35px;
       margin-inline: auto;
       
       /* align-content: bottom; */
@@ -81,14 +81,15 @@
     .calc {
       inline-size: 100%;
     }
+    .red {
+      border: 1.5px solid red;
+    }
   </style>
 </head>
 <body>
   <div>
     <h2>Gtube subscribe button</h2>
-    <button class="subs"  onclick="
-       subs();
-    ">
+    <button class="subs">
      Subscribe
     </button>
   </div>
@@ -109,51 +110,178 @@
     <span>
       Order over $40 = <b>FREE</b> Shipping
     </span>
-    <input type="text" id="calculator" placeholder="Cost of order..."
-    onkeydown="
-     enter_keydown_input()
-      //event.key === `Enter` ? calculate() : 0
-    // if(event.key === `Enter`) {
-    //   event.key = calculate();
-    // }
-    "
-    >
-    <button class="calc"
-    onclick="
-     calculate();
-    ">Calculate</button>
+    <input type="text" id="calculator" placeholder="Cost of order...">
+    <span class="alert"></span>
+    <button class="calc y">Calculate</button>
     <span class="cost-display"></span>
   </div>
 
-  <script>
-    function enter_keydown_input() {
-      event.key === `Enter` ? calculate() : 0
-    }
-    function calculate() {
-      calcElem = document.querySelector(`.calc`);
-      inputElem = document.querySelector(`#calculator`);
-      cost = Number(inputElem.value);
+  <script src="ex.js">
 
-      if (cost < 40) {
-        cost = cost + 10 
-      }
-      cost_displayElem = document.querySelector(`.cost-display`);
-      cost_displayElem.innerHTML = `Total: $${cost}`;
-      //console.log(cost);
+    let s1 = true, s2 = false, s3 = true, s4 = true, s5 = true, s6 = false;
+    seat = new Array();
+    seat.push(s1, s2, s3, s4, s5, s6);
+    console.log(seat[5]);
+    
+    // let g =  [90, 91, 'gr', 'gv'], r = {x:90, y:20, z:35};
+    // let q;
+    // for (q in g) {
+             
+    //   console.log(g[q]);
+    //   console.log(q);
       
-      
-    }
+    // };
 
-    function subs() {
-      let subscribeElem = document.querySelector('.subs');
-      if (subscribeElem.innerText === `Subscribe`) {
-        subscribeElem.innerText = `Subscribed`;
-        subscribeElem.classList.add(`subs-state`)
-      } else {
-        subscribeElem.innerText = `Subscribe`;
-        subscribeElem.classList.remove(`subs-state`)
-      }
-    }
+
+
+    // let girl =  {x:1, y:2, z:3};
+    // let girl2 = [];
+    // let x = 0;
+
+    // for(girl2[x++] in g );
+    //   console.log(girl2);
+    //   for(x in girl2) console.log(x);
+      
+    
+     //let u = {x : 15}, tt = 1; 
+
+    //  function p(t,u) {
+    //   u = u || t++;
+    //   t += 20;
+    //  // t++;
+    //   //++t;
+      
+    //   return  t - u;
+    //  } 
+
+
+    //  console.log(p(10));
+     
+
+    // v = `gbolaga-ola-meyeneabasi`;
+    // r = v.split(`-`);
+    // s= v.substring(3, 7)
+    // console.log(r);
+    // console.log(s);
+    
+
+
+    // function lieDetectorTest() {
+    //   var lies = 0;
+    //   var stolenDiamond = { };
+    //   if (stolenDiamond) {
+    //   console.log("You stole the diamond");
+    //   lies++;
+    //   }
+    //   var car = {
+    //   keysInPocket: null
+    //   };
+    //   if (car.keysInPocket) {
+    //   console.log("Uh oh, guess you stole the car!");
+    //   lies++;
+    //   }
+    //   if (car.emptyGasTank) {
+    //   console.log("You drove the car after you stole it!");
+    //   lies++;
+    //   }
+    //   var foundYouAtTheCrimeScene = [ ];
+    //   if (foundYouAtTheCrimeScene) {
+    //   console.log("A sure sign of guilt");
+    //   lies++;
+    //   }
+    //   if (foundYouAtTheCrimeScene[0]) {
+    //   console.log("Caught with a stolen item!");
+    //   lies++;
+    //   }
+    //   var yourName = " ";
+    //   if (yourName) {
+    //   console.log("Guess you lied about your name");
+    //   lies++;
+    //   }
+    //   return lies;
+    // }
+    //   var numberOfLies = lieDetectorTest();
+    //   console.log(`You told ${numberOfLies} lies!`);
+    //   if (numberOfLies >= 3) {
+    //   console.log("Guilty as charged");
+    //   }
+
+
+    // let lot = [chevy, taxi, fiat1, fiat2];
+    // function findCarInLot(car) {
+    //   for (var i = 0; i < lot.length; i++) {
+    //     if (car === lot[i]) {
+    //       return i;
+    //     }
+    //   }
+    //   return car;
+    // }
+    
+    // var chevy = {
+    // make: "Chevy", 
+    // model: "Bel Air"
+    // };
+    // var taxi = {
+    // make: "Webville Motors", 
+    // model: "Taxi"
+    // };
+    // var fiat1 = {
+    // make: "Fiat", 
+    // model: "500"
+    // };
+    // var fiat2 = {
+    // make: "Fiat", 
+    // model: "500"
+    // };
+    
+    // var loc1 = findCarInLot(fiat2);
+    // var loc2 = findCarInLot(taxi);
+    // var loc3 = findCarInLot(chevy);
+    // var loc4 = findCarInLot(fiat1);
+
+    // console.log(loc1);
+    
+
+    //  let x = 20;
+    //  years = [x + '06'];
+    //  console.log(years);
+
+
+ 
+     
+     //console.log(hello());
+    
+   
+    let today = new Date(); 
+    let hourNow = today.getHours(); 
+    let greeting = ``; 
+
+    
+     greeting =  (hourNow >= 18) && 'Good evening!'||
+                 (hourNow >= 12) && ' Good afternoon!' ||
+                 (hourNow >= 0) && 'Good morning!'  ;      
+    // if (hourNow > 18) 
+    // greeting= 'Good evening!'; 
+    // else if (hourNow > 12)  
+    // greeting = ' Good afternoon!'; 
+    // else if (hourNow > 0)  
+    // greeting = 'Good morning!'; 
+    // else  
+    // greeting = 'Welcome! ' ; 
+     document .write( `<h3> ${greeting} </h3>`);
+
+    //let scope1 = `global`;
+    // function test() {
+    //   console.log(scope1);
+    //     scope1 = `local`;
+    //   return scope1;
+    // }
+   
+    // console.log(test());
+    
+    
+    
+
     
   </script>
 </body>

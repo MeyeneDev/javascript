@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <p id="pp">The <img name="bb" src="paper-emoji.png" alt="Cat"> in the
+  <img name="bb" src="rock-emoji.png" alt="Hat">.</p>
+  <p><button id="btnn" onclick="replaceImages()">Replace</button></p>
+  <script>
+    console.log(pp);
+    console.log(Array.from(bb));
+    
+    function replaceImages() {
+      // let images = document.body.getElementsByTagName("img");
+      // for (let i = images.length - 1; i >= 0; i--) {
+      //   let image = images[i];
+      //   if (image.alt) {
+      //   let text = document.createTextNode(image.alt);
+      //   image.parentNode.replaceChild(text, image);
+      //   }
+      // }
+ 
+
+     Array.from(bb).forEach((e) => {
+        let  text;
+        // (a[i].alt) && (
+        //  text = document.createTextNode(a[i].alt),
+        //  a[i].parentNode.replaceChild(text, a[i])
+        // )
+        (e.alt) && (
+         text = document.createTextNode(e.alt),
+         e.parentNode.replaceChild(text, e)
+        );
+        
+      });
+    }
+  </script>
+</body>
+</html>

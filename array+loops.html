@@ -10,36 +10,30 @@
 <body>
   <div class="wrapper j">
     <div class="flex">
-      <h2>Todo List Practice 1</h2>
       <div class="flexi">
-        <input type="text" class="input3" placeholder="Add event..." onkeydown="
+        <h2>Todo List Practice 1</h2>
+        <!-- <a href="#add2"><button id="btn1" class="reset_btn">top</button></a> -->
+        <button id="btn1" class="reset_btn">top</button>
+      </div>
+      
+      <div class="flexi">
+        <input id="name" type="text" class="input3" placeholder="Add event..." autocomplete="off" onkeydown="
           enter_btn()
         ">
-        <input type="date" class="input4" placeholder="Add event..." onkeydown="
-          enter_btn()
-        ">
-        <button onclick="
-          add_btn()
-         " class="reset_btn"
-        >
-          Add
+        <input id="date" type="date" class="input4"  onkeydown="enter_btn()" >
+        <button onclick="addBtn()" class="reset_btn">
+          +
         </button>
       </div>
       <div class="show flex"></div>
     </div >
-    <div class="flex">
-      <h2>Todo List Practice 2</h2>
-      <div class="flexi">
-        <input type="text" class="input4" placeholder="Add event...">
-      <button class="reset_btn">Add</button>
-      </div>
-      
-    </div>
+    
     <div class="todo">
-      <h2>Todo List</h2>
+      <h2 id="add1">Todo List</h2>
       <input type="text" class="input1" placeholder="Add event...">
        <input type="date" class="input2" >
-      <button class="reset_btn">Add</button>
+      <button id="add2"  class="reset_btn ">Add</button>
+      <div class="flex"></div>
     </div>
 
   </div>

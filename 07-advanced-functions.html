@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Advanced function</title>
+  <style>
+    button, .subs {
+      background-color: hsl(0, 40%, 65%);
+      border: none;
+      color:white;
+      padding: 12px 60px;
+      margin-block: 8px;
+      border-radius: 24px;
+      border-bottom: 2.5px solid hsl(0, 40%, 30%);
+      font-weight: 600;
+      font-size: 22px;
+      text-transform: capitalize;
+      text-shadow: 0 -1.5px 1px hsl(0, 40%, 30%);
+      cursor: pointer;
+      transition: background-color .4s;
+
+    }
+  </style>
+</head>
+<body>
+  <button class="subs" >
+     Subscribe
+  </button>
+
+  <script>
+    //shortcut for calling function in an object
+    //instead of writing this
+    const obj1 = {
+      method: function choco() {
+        console.log(`sweet`);
+        return `sweet`
+      }
+    }
+    const obj10 = {
+      method: function() {
+        console.log(`sweet10`);
+        return `sweet10`
+      }
+    }
+    const obj11 = {
+      method: () => {
+        console.log(`sweet11`);
+        return `sweet11`
+      }
+    }
+    console.log(obj1.method(), obj10.method(),obj11.method());
+
+    //use this shortcut method for best practise
+    const obj = {
+      method(){
+        console.log(`sweeter`);
+        return `best practice is sweeter`
+      }
+    };
+    console.log(obj.method());
+
+
+    // ARROW FUNCTION
+    // when passing a function into another function it is recommended to use arrow => function.
+ 
+    const Arrowfunction = function(value, index) {
+       console.log(value, index + 3 );
+       
+    }
+    Arrowfunction(`goated`, 3)
+
+    //shortcut to write it functions    
+    const arrowfunc = (value, index) => {
+      console.log(value, index + 3);
+      
+    }
+    arrowfunc(`goated`, 9)
+
+    //situation 2
+    const arrowfunc1 = (value) => {
+      console.log(value); 
+    }
+    arrowfunc1(9);
+     // this can also be written like this 
+    const arrowfunc2 = value => {
+    console.log(value + 1 );
+    }
+    arrowfunc2(6);
+
+    //situation 3
+    const arrowfunc3 = () => {return 3 * 4;}
+    console.log(arrowfunc3());
+
+    //this can be written like this
+    const arrowfunc4 = () => 7 + 4;
+    console.log(arrowfunc4()); 
+
+    //arrow functions in events listener
+    function subs(l=`pichichi movie`) {
+      return l 
+    }
+
+    const btnElem = document.querySelector(`.subs`);
+    const arrowfunc5 = () => {
+      // console.log(`subscribe to ${param}`);
+      alert(`subscribe to ${subs()}`);
+    }
+    function arrowfunc51() {
+      // console.log(`subscribe to ${param}`);
+      alert(`subscribe to ${subs('HELL')}`);
+    }
+    function arrowfunc52(m= `HELL2`) {
+      // console.log(`subscribe to ${param}`);
+      alert(`subscribe to ${subs(m)}`);
+    }
+    // this method shouldnt be used, the event runs automatically when the code is loaded on to the page because the function is immediately called by the event handler---- use format2 
+    //btnElem.addEventListener(`click`, arrowfunc51());
+
+    //(Format2) use this so that the eventhandler can call the function when it is pressed through function referencing. 
+    // btnElem.addEventListener(`click`, arrowfunc52)
+
+    // fastest way for adding multiple events by using Arrow functions if the funtion to be runned has arguments
+    btnElem.addEventListener(`click`, () => arrowfunc5(`spice`));
+
+    //fastest and best way for writing single Event with argument using arrow functions
+   // btnElem.onclick = () => arrowfunc52();
+    //do not write in the format below the event wont run because you are passing a function reference through an arrow function that needs to invoke a function
+    //btnElem.onclick = () => arrowfunc5;
+    //btnElem.addEventListener(`click`,() => arrowfunc52);
+    
+    
+  </script>
+</body>
+</html>

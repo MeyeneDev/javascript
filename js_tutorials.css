@@ -7,58 +7,88 @@ html, * {
     }
     body {
       background-color: hsl(180, 40%, 10%);
+      position: relative;
+      height: 100vh;
+    }
+    .divbtn {
+      display: flex
     }
     .reset_btn {
+      display: flex;
       flex-wrap: 1;
-      width: 140px;
+      width: 180px;
       align-self: stretch;
-      background-color: hsl(240, 40%, 60%);
+      justify-content: center;
+      align-items: center;
+      background-color: hsl(240, 20%, 15%);
       border: none;
-      color:white;
-      padding: 12px;
-      margin-inline: 4px;
+      color:hsl(240, 18%, 70%);
+      padding-block: 12px;
+      margin-inline: 8px;
       border-radius: 40px;
-      border-bottom: 2.5px solid hsl(240, 40%, 30%);
+      border-bottom: 2.5px solid hsl(240, 10%, 5%);
       font-weight: 600;
-      font-size: 20px;
+      font-size: 18px;
       text-transform: capitalize;
-      text-shadow: 0 -1.5px 1px hsl(240, 40%, 15%);
+      text-shadow: 0 -2px .5px hsl(240, 10%, 5%);
       cursor: pointer;
-      transition: background-color .4s;
+      transition: background-color .2s;
 
     }
     .reset_btn:hover {
-      background-color: hsl(240, 40%, 50%);
-      border: none;
+      background-color: hsl(240, 20%, 30%);
+      color:hsl(240, 18%, 85%);
+      text-shadow: 0 -2px .5px hsl(240, 20%, 20%);
     }
 
     .reset_btn:active {
-      background-color: hsl(240, 40%, 30%);
+      background-color: hsl(240, 20%, 25%);
+      color:hsl(240, 18%, 65%);
       border: none;
     }
+    .author{
+      position: absolute;
+      left: 40%;      
+      bottom: 8px;
+      font-size: 10px;
+      color: hsl(180, 23%, 30%);
+    }
+    /*@media(min-width: 620px) {
+      .author{
+      right: 40vw;
+      }
+    }
+     @media(min-width: 1177.5px) {
+      .author{
+      right: 45vw;
+      }
+    }*/
+    .small{
+      font-size: 10px;
+      color: hsl(180, 23%, 30%);
+    }
+    .bold{
+      font-size: 12px;
+      font-weight: 800;
+      color: hsl(180, 23%, 30%);
+    }
 
-    
     .wrapper {
       display: flex;
       flex-flow: column nowrap;
       align-items: center;
       padding: 16px;
-      /* block-size:95.3vh; */
-    }
-
-    .blk {
-      
-      block-size:55.3vh;
+      position: relative;
     }
 
     .score_board {
-      margin-block-end: 16px;
+      margin-block: 24px 16px;
       font-weight: 550;
-      font-size: 18px;
-
+      font-size: 14px;
+      color: hsl(240, 15%, 60%);
     }
+
     .game_moves {
-      margin-block-end: auto;
       display: flex;
       flex-direction: column;
       justify-content: center;
@@ -66,27 +96,26 @@ html, * {
       gap: 8px;
       font-weight: 700;
       text-transform: capitalize;
-      font-size: 20px;
+      font-size: 16px;
     }
     .game_moves img {
-      inline-size: 60px;
+      inline-size: 48px;
     }
     .gm1 {
       margin-block-end: 24px;
     }
-    
-   
+
     .result {
-      font-weight: 700;
-      font-size: 28px;
-      margin-block: 32px 16px;
+      font-weight: 800;
+      font-size: 24px;
+      margin-block: 16px;
       text-transform: uppercase;
     }
     .green {
       color: hsl(120, 85%, 65%);
     }
     .red {
-      color: hsl(0, 100%, 65%);
+      color: hsl(0, 85%, 65%);
     }
     .blue {
       color: hsl(240, 80%, 75%);
@@ -94,32 +123,41 @@ html, * {
 
     .wrapper__btn {
       display: flex;
-      margin-block-start: 56px;
-      margin-block-end: 40px;
-      gap: 12px;
+      margin-block: 40px;
+      gap: 16px;
     }
 
     .btn {
-      flex: 1;
+      flex: 0 1 150px;
       display: flex;
       align-items: flex-start;
       background-color: hsl(180, 40%, 15%);
       border: none;
       padding: 40px;
       border-radius: 50%;
-      border: 2px solid hsl(240, 90%, 90%);
+      border: 2px solid hsl(180, 30%, 28%);
       cursor: pointer;
     }
     .btn:hover {
       background-color: hsl(180, 20%, 25%);
-      border: 2px solid hsl(240, 30%, 70%);
+      border: 2px solid hsl(180, 40%, 50%);
+    }
+    .btn:active {
+      background-color: hsl(180, 20%, 20%);
+      border: 2px solid hsl(180, 30%, 35%);
     }
     img {
       max-width: 100%;
     }
     .red-todo {
-      background-color: hsl(0, 40%, 70%);
+      background-color: hsl(0, 30%, 30%);
       text-shadow: 0 -1.5px 1px hsl(0, 40%, 15%);
+      border-bottom: 2.4px solid hsl(0, 20%, 10%);
+    }
+    .red-todo:hover {
+      background-color: hsl(0, 30%, 40%);
+      text-shadow: 0 -1.5px 1px hsl(0, 40%, 15%);
+
     }
     .input3, span, .input4 {
       flex: 1;
@@ -160,4 +198,17 @@ html, * {
       gap: 6px;
       align-items: center;
       
+    }
+    .numbering {
+      border-radius: 50%;
+      aspect-ratio: 1/1;
+      background-color: hsl(180, 20%, 20%);
+      color: hsl(180, 20%, 75%);
+      flex: 0 0 26px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-inline-end: 8px;
+      font-size: 13px;
+      font-weight: 600;
     }

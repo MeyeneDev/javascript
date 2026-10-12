@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="seat-selection.css" >
+  <title>cinema Advanced</title>
+</head>
+<body>
+  <div class="flex">
+    <div class="grid">
+      <hr class="s0">
+      <hr class="s1">
+      <hr class="s2">
+      <hr class="s3">
+      <hr class="s4">
+      <hr class="s5">
+      <hr class="s6">
+      <hr class="s7">
+      <hr class="s8">
+      <hr class="s9">
+      <hr class="s10">
+      <hr class="s11">
+      <hr class="s12">
+      <hr class="s13">
+      <hr class="s14">
+      <hr class="s15">
+      <hr class="s16">
+      <hr class="s17">
+      <hr class="s18">
+      <hr class="s19">
+      <hr class="s20">
+      <hr class="s21">
+      <hr class="s22">
+      <hr class="s23">
+      <hr class="s24">
+      <hr class="s25">
+      <hr class="s26">
+    </div>
+    <button> select </button>
+  </div>
+
+  <script>
+    const seat = new Array(new Array(), new Array(), new Array());
+    let s0 = s2 = s3 = s6 = s8 = s12 = s14 = s18 = s20 = s24 = s26 = false;
+    let s1 = s4 = s5 = s7 = s9 = s10 = s11 = s13 = s15 = s16 = s17 = s19 = s21 = s22 = s23 = s25 = true ;
+    seat[0].push(s0, s1, s2, s3, s4, s5, s6, s7, s8);
+    seat[1].push(s9, s10, s11, s12, s13, s14, s15, s16, s17);
+    seat[2].push(s18, s19, s20, s21, s22, s23, s24, s25, s26);
+    console.log(seat);
+    let selseat = ``;
+
+    function eachSeat(seatNum, statusClass, description) {
+      document.querySelector(`.s${seatNum}`).classList.add(statusClass);
+      document.querySelector(`.s${seatNum}`).id = description
+    }
+    function eachSeatRem(seatNum, statusClass, description) {
+      document.querySelector(`.s${seatNum}`).classList.remove(statusClass);
+      document.querySelector(`.s${seatNum}`).id = description;
+    }
+
+    function init_seat() {
+      for(let r = 0; r < seat.length; r++) {
+        for(let c = 0; c < seat[r].length; c++) {
+          (seat[r][c]) ? (
+            eachSeat(r * seat[r].length + c, `available`, `seat-available`)
+          ) 
+          : (
+            eachSeat(r * seat[r].length + c, `unavailable`, `seat-unavailable`)
+          )
+        }
+      } 
+    }
+    document.querySelector('body').onload = () => init_seat();
+    document.querySelector(`button`).onclick = () => find_seat();
+    function find_seat() {
+      (selseat <= 0) && (selseat = "", init_seat());
+      for(let r = 0; r < seat.length; r++) {
+        for(let c = 0; c < seat[r].length; c++) {
+          let accept;
+          ((seat[r][c]) && (seat[r][c + 1]) && (seat[r][c + 2]))
+          //(seat[r][c])
+          &&
+          (
+            selseat = r * seat[r].length + c,
+            eachSeat(r * seat[r].length + c, `selected`,`seat-available`),
+            eachSeat(r * seat[r].length + c + 1, `selected`, `seat-available`),
+            eachSeat(r * seat[r].length + c + 2, `selected`, `seat-available`),
+
+            accept = confirm(`Seat ${c + 1 } through ${c + 3} in Row ${r + 1} is available. Accept?`),
+
+            (accept) ? Break : (
+              selseat = "",
+              eachSeatRem(r * seat[r].length + c, `selected`, `seat-available`),
+              eachSeatRem(r * seat[r].length + c + 1, `selected`, `seat-available`),
+              eachSeatRem(r * seat[r].length + c + 2, `selected`, `seat-available`)
+           )
+          )
+        }
+
+      }
+
+    }
+  </script>
+</body>
+</html>

@@ -1,0 +1,72 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+.flex {
+  display: flex;
+  flex-flow: column nowrap;
+}
+.grid {
+  display: grid;
+  grid: repeat(4, auto) / repeat(9, auto);
+  gap: 16px;
+  justify-content: center;
+  align-items: center;
+  padding-block: 24px;
+
+}
+.grid1 {
+  display: flex;
+  flex-flow: row wrap;
+  gap: 16px;
+  justify-content: center;
+  
+  padding: 24px 12px;
+}
+input {
+  flex: 1;
+  block-size: 150px;
+  padding: 4px;
+  border-radius: 5px;
+  border: none;
+  cursor: pointer;
+}
+hr {
+  block-size: 100px;
+  inline-size: 40px;
+  border-radius: 12px;
+  border: none;
+  cursor: pointer; 
+}
+.unavailable:nth-child(n) {
+  background-color: hsl(0, 60%, 70%);
+}
+hr:nth-child(3n + 2), hr:nth-child(2n + 6)  {
+  background-color: hsl(240, 40%, 50%);
+}
+.available:nth-child(4n + 2), .available:nth-child(2n + 5)  {
+  background-color: hsl(240, 40%, 50%);
+}
+input.selected, hr.selected {
+  background-color: hsl(240, 90%, 80%);
+  padding: 2px;
+  border: 4px dotted hsl(0, 0%, 100%);
+  inline-size: 30px;
+}
+button {
+  margin:40px auto ;
+  padding: 9px 44px;
+  border-radius: 24px;
+  font-size: 22px;
+  border: 1px solid ;
+  letter-spacing: .61px;
+  font-weight: 600;
+  color: hsl(0, 89%, 38%);
+  text-shadow: 0px -.5px .5px hsl(0, 20%, 20%);
+  cursor: pointer;
+}
+button:hover {
+  background-color: hsl(0, 45%, 45%);
+  color: hsl(0, 89%, 95%);
+  text-shadow: 0px -1px .5px hsl(0, 40%, 20%);
+}
